@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 LABEL maintainer Eunsil Gil
 LABEL contect eunsil.study@gmail.com
 ENV DEBIAN_FRONTEND=noninterative
