@@ -62,7 +62,7 @@ pipeline {
                     }
                     sh 'ssh -o StrictHostKeyChecking=no -i $JENKINS_HOME/test.pem ec2-user@172.31.50.255 \
                     "aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 560971842042.dkr.ecr.ap-northeast-2.amazonaws.com; \
-                    docker rmi -f 560971842042.dkr.ecr.ap-northeast-2.amazonaws.com/jenkins:latest \
+                    docker rmi -f 560971842042.dkr.ecr.ap-northeast-2.amazonaws.com/jenkins:latest; \
                     docker run -d --rm -p 80:80 --name nginx 560971842042.dkr.ecr.ap-northeast-2.amazonaws.com/jenkins:latest"'
                 }
                 script {
@@ -71,7 +71,7 @@ pipeline {
                     }
                     sh 'ssh -o StrictHostKeyChecking=no -i $JENKINS_HOME/test.pem ubuntu@172.31.32.10 \
                     "aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 560971842042.dkr.ecr.ap-northeast-2.amazonaws.com; \
-                    docker rmi -f 560971842042.dkr.ecr.ap-northeast-2.amazonaws.com/jenkins:latest \
+                    docker rmi -f 560971842042.dkr.ecr.ap-northeast-2.amazonaws.com/jenkins:latest; \
                     docker run -d --rm -p 80:80 --name nginx 560971842042.dkr.ecr.ap-northeast-2.amazonaws.com/jenkins:latest"'
                 }
             }
