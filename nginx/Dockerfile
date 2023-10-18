@@ -5,7 +5,7 @@ RUN apt-get update &&\
 apt-get -y install apache2
 
 # Install apache and write hello world message
-RUN echo 'Hello World! pipeline test' > /var/www/html/index.html
+RUN echo 'Hello World! pipeline test change weebhook' > /var/www/html/index.html
 
 # Configure apache
 RUN echo '. /etc/apache2/envvars' > /root/run_apache.sh && \
